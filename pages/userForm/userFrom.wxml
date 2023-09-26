@@ -1,0 +1,85 @@
+<page-meta>
+  <navigation-bar title="SLC信息录入" back="ture" color="black" background="#FFF"></navigation-bar>
+</page-meta>
+
+<view class="userForm">
+  <view class="form-list">
+
+    <view class="form-item">
+    <view class="item-box"><view class="item-triangle"></view>
+      <view class="item-title"> 姓名：</view>
+    </view>
+  <input bindinput="inputUserName" placeholder="请输入您的姓名" class="item-input" />
+
+  <view class="item-box"><view class="item-triangle"></view>
+      <view class="item-title"> 手机号：</view>
+    </view>
+  <input bindinput="inputUserName" placeholder="请输入您的姓名" class="item-input" />
+
+  <view class="item-box"><view class="item-triangle"></view>
+      <view class="item-title"> 年级专业：</view>
+    </view>
+  <input bindinput="inputUserName" placeholder="请输入您的姓名" class="item-input" />
+
+  <view class="item-box"><view class="item-triangle"></view>
+      <view class="item-title"> 邮箱：</view>
+    </view>
+  <input bindinput="inputUserName" placeholder="请输入您的姓名" class="item-input" />
+  
+    </view>
+
+
+    <view class="form-item">
+    <view class="item-box"><view class="item-triangle"></view>
+      <view class="item-title"> 选择导生：</view>
+    </view>
+  <input bindinput="inputCourse" placeholder="请输入您的主体" class="item-input" />
+    </view>
+
+    <view class="form-item">
+    <view class="item-box"><view class="item-triangle"></view>
+      <view class="item-title"> 选择时间段：</view>
+
+      <picker mode="date" start="2022-09-26" end="2022-10-7" value="{{date}}" bindchange="bindDateChange" >
+      <view class="picker">
+    {{date}}date
+  </view>
+  
+</picker>
+    </view>
+    
+    </view>
+
+    <view class="form-item">
+    <view class="item-box"><view class="item-triangle"></view>
+      <view class="item-title"> 导生时间：</view>
+    </view>
+
+    <view class="item-picker">
+      <picker mode="time" start="08:00" end="22:00" value="{{startTime}}" bindchange="bindTimeChange" data-type="startTime">
+      <view class="picker">
+    {{startTime}}-
+  </view>
+  
+</picker>
+<picker mode="time" start="08:00" end="22:00" value="{{endTime}}" bindchange="bindTimeChange" data-type="endTime">
+  <view class="picker">
+    {{endTime}}
+  </view>
+</picker>
+</view>
+    </view>
+
+    <view class="form-item">
+    <view class="item-box"><view class="item-triangle"></view>
+      <view class="item-title"> 导生个人会议号：</view>
+    </view>
+  <input bindinput="inputMentor" placeholder="请输入您的主体" class="item-input" />
+    </view>
+
+    <button bindtap="submitMsg" class="submit">录入信息</button>
+
+
+  </view>
+</view>
+

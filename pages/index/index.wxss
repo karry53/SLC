@@ -1,0 +1,174 @@
+.page {
+  background-color: #F4F4F4;
+  height: 100vh;
+}
+
+.header {
+  width: 100%;
+  height: 350rpx;
+}
+
+.header image {
+  width: 100%;
+  height: 100%;
+}
+
+.process-box {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  background-color: #ffffff;
+}
+
+
+.process-title-text {
+  font-size: 30rpx;
+  text-align: center;
+}
+
+
+.process-list {
+  padding: 15rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.process-item {
+  position: relative;
+  width: 45%;
+  margin-bottom: 10rpx;
+  background-color: #F9F9F9;
+  display: flex;
+  justify-content: space-between;
+  /* border-radius: 20rpx; */
+}
+
+.process-triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 60rpx solid transparent;
+  border-left: 60rpx solid #ED6E46;
+}
+
+
+.process-text {
+  width: 100%;
+  padding: 20rpx;
+  text-align: center;
+  z-index: 1;
+}
+
+.process-text-item {
+  font-size: 35rpx;
+  margin-bottom: 8rpx;
+}
+
+.process-text-intro {
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.post-show {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+.post-list {
+  border-bottom: 1px solid #EEEEEE;
+  margin-bottom: 10rpx;
+}
+
+.post-item {
+  margin-bottom: 12rpx;
+  padding: 15rpx;
+  display: flex;
+  /* 水平居中对齐 */
+  justify-content: center;
+  /*垂直居中对齐*/
+  align-items: center;
+  flex-direction: row;
+  height: 300rpx;
+}
+
+.post-image {
+  flex: 1.05;
+  height: 280rpx;
+}
+
+.post-info {
+  padding-left: 30rpx;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.post-info-mainBody {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.post-rectangle {
+  /* position: absolute; */
+  width: 0;
+  height: 0;
+  border: 5rpx solid #ED6E46;
+}
+
+.post-mainBody {
+  margin-left: 20rpx;
+  font-size: 35rpx;
+  font-weight: bold;
+  /* color: #4e80b6; */
+  color: #333333;
+}
+
+/* .post-date {
+  font-size: 12px;
+  color: #999999;
+} */
+
+/* .post-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+} */
+
+.post-content {
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  font-weight: bold;
+  color: #808080;
+}
+
+
+.post-button {
+  padding: 8px 12px;
+  background-color: #ED6E46;
+  color: #ffffff;
+  border-radius: 20px;
+  margin-top: 20rpx;
+}
+
+
+.post-status {
+  font-size: 14px;
+  text-align: right;
+}
+
+.waiting {
+  color: #3087b9;
+  /* 等待结对状态的颜色 */
+}
+
+.paired {
+  color: #999999;
+  /* 已结对状态的颜色 */
+}

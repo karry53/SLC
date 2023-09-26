@@ -1,0 +1,26 @@
+<page-meta>
+  <navigation-bar title="注册" back="ture" color="black" background="#FFF"></navigation-bar>
+</page-meta>
+
+
+<view class="page">
+
+<view class="header">
+  <view class="header-title">欢迎注册管理系统</view>
+</view>
+
+<view class="form">
+  <view class="login-type">
+    <view class="teacher-btn {{teacherActive ? 'active' : ''}}" bindtap="switchToTeacher">教师</view>
+    <view class="student-btn {{!teacherActive ? 'active' : ''}}" bindtap="switchToStudent">导生</view>
+  </view>
+
+  <input class="login-input" type="text" value="" :maxlength="11" placeholder="请输入您的手机号/邮箱" placeholder-class="input-placeholder" />
+
+  <input class="login-input" type="text" password value="" placeholder="请输入您的登录密码" placeholder-class="input-placeholder" />
+
+  <button bindtap="submitLogin" class="submit-login">注册</button>
+
+  <!-- <view class="registration">注册</view> -->
+</view>
+</view>

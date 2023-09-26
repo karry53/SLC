@@ -1,0 +1,44 @@
+<page-meta>
+  <navigation-bar title="SLC预约记录" back="ture" color="black" background="#FFF"></navigation-bar>
+</page-meta>
+
+<view class="userRecord">
+  <view class="form-list">
+
+    <view class="form-item">
+      <view class="item-box">
+        <view class="item-triangle"></view>
+        <view class="item-title"> 用户姓名：</view>
+      </view>
+      <view class="item-line"></view>
+      <view class="info-course">预约课程名称：计算机科学与技术</view>
+      <view class="info-con-number">导生会议号：123-123-1238</view>
+      <view class="info-name">导生姓名：xxx</view>
+      <view class="item-line"></view>
+
+      <!-- <van-button color="#999999" plain custom-style="width:180rpx;height:80rpx">取消预约</van-button> -->
+
+      <view class="del-button">取消预约</view>
+
+    </view>
+
+    <view class="form-item">
+      <view class="item-box">
+        <view class="item-triangle"></view>
+        <view class="item-title"> 用户姓名：xxx</view>
+      </view>
+      <view class="item-line"></view>
+      <!-- <view class="post-rectangle"></view> -->
+      <view class="info-course">预约课程名称：计算机科学与技术</view>
+      <view class="info-con-number">导生会议号：123-123-1238</view>
+      <view class="info-name">导生姓名：xxx</view>
+      <view class="item-line"></view>
+
+      <!-- <van-button color="#999999" plain custom-style="width:180rpx;height:80rpx">取消预约</van-button> -->
+
+      <view class="del-button">取消预约</view>
+
+    </view>
+    
+  </view>
+</view>

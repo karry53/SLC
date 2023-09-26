@@ -1,0 +1,88 @@
+page {
+  background-color: #F4F4F4;
+}
+
+.userRecord{
+  padding: 10rpx;
+  padding-top: 0;
+  
+}
+
+.form-list{
+  margin-top: 25rpx;
+}
+
+.form-item{
+  background-color: #ffffff;
+  margin-bottom: 25rpx;
+  padding: 30rpx;
+  height: 320rpx;
+}
+
+.item-box{
+  display: flex;
+  /* justify-content: left; */
+  align-items: center;
+}
+
+.item-title{
+  font-size: 30rpx;
+  /* color: #353535; */
+}
+
+.item-line{
+  border-bottom: 3rpx solid #F4F4F4;
+  margin-top: 20rpx;
+}
+
+.info-course{
+  margin-top: 10rpx;
+}
+
+.info-con-number{
+  margin-top: 10rpx;
+}
+.post-rectangle {
+  /* position: absolute; */
+  width: 0;
+  height: 0;
+  border: 5rpx solid #ED6E46;
+}
+.info-name{
+  margin-top: 10rpx;
+  color: #999999;
+  font-size: 30rpx;
+}
+
+.item-triangle {
+  margin-left: 5rpx;
+  margin-right: 15rpx;
+  border-radius: 100rpx;
+  border-bottom: 35rpx solid #ED6E46;
+  border-left: 6rpx solid #ED6E46;
+}
+
+.item-picker{
+  display: flex;
+  justify-content: center;
+}
+
+.del-button{
+  color: #999999;
+  padding: 8rpx;
+  font-size: 28rpx;
+  border: 3rpx solid #999999;
+  width: 120rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  float: right;
+}
+
+.submit{
+  width: 100%;
+  background-color: #ED6E46;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 50rpx;
+  margin-top: 20rpx;
+}

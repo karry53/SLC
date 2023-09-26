@@ -1,0 +1,67 @@
+<!--index.wxml-->
+<navigation-bar title="SLC互助学习中心" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<view class="page">
+  <view class="header">
+          <image src="../../img/header.jpg" mode="aspectFill"></image>
+  </view>
+
+  <view class="process-box">
+    <view class="process-list">
+      <!-- <image class="process-icon" src="/images/icon_cylinder.png"></image> -->
+      <view class="process-item" bindtap="navigateToUserForm">
+        <view class="process-triangle"></view>
+        <!-- <text class="process-triangle-item">01</text> -->
+        <view class="process-text">
+          <view class="process-text-item">立刻预约</view>
+          <view class="process-text-intro">点击开始预约</view>
+        </view>
+
+      </view>
+      <view class="process-item">
+        <view class="process-triangle"></view>
+        <!-- <text class="process-triangle-item">02</text> -->
+        <view class="process-text">
+          <view class="process-text-item" bind:tap="switchTabUserRecord">查看课程</view>
+          <view class="process-text-intro">查看预约记录</view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+
+  <view class="post-show">
+
+    <view class="process-title">
+      <view class="process-title-text">公告</view>
+      <!-- <view class="process-cylinder"></view> -->
+      <view class="process-canvas" bindscroll="onScroll">
+        <canvas id="sec-cylinderCanvas" canvas-id="cylinderCanvas" type="2d" style="top:{{postTop}}px;left: {{left}}px"></canvas>
+      </view>
+      <!-- <view class="process-rectangle"></view> -->
+    </view>
+
+    <view class="post-list" wx:for="{{postList}}" wx:key="index">
+
+      <view class="post-item" data-id="{{item._id}}">
+        <image src="{{item.image[0]}}"  data-imageUrl="{{item.image[0]}}" bindtap="previewImage" mode="aspectFill" class="post-image" />
+
+        <view class="post-info">
+          <view class="post-info-mainBody">
+            <view class="post-rectangle"></view>
+            <text class="post-mainBody">{{item.mainBody}}</text>
+          </view>
+          <view class="post-content">{{item.demand}}</view>
+          <!-- <view class="post-status {{item.status === '已结对' ? 'paired' : 'waiting'}}">{{item.status}}</view> -->
+          <button class="post-button" bindtap="navigateToDetail"  data-id="{{item._id}}" size="mini">了解更多</button>
+        </view>
+
+        
+      </view>
+
+    </view>
+
+
+
+  </view>
+</view>
