@@ -1,0 +1,9 @@
+<!-- <page-meta>
+  <navigation-bar title="管理选择" back="ture" color="black" background="#FFF"></navigation-bar>
+</page-meta> -->
+
+<view class="container">
+  <navigator url="../admiForm/admiForm" class="input-info">录入信息</navigator>
+<navigator url="../admTeaRecord/admTeaRecord" class="manage-info">课程管理</navigator>
+</view>
+

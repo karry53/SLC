@@ -1,0 +1,28 @@
+page{
+  /* background-color: #f4f4f4; */
+}
+.container{
+  margin-top: 100rpx;
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.input-info{
+  height: 100rpx;
+  width: 300rpx;
+  margin-top: 100rpx;
+  color: white;
+  background-color: #ED6E46;
+  border-radius: 20rpx;
+}
+
+.manage-info{
+  height: 100rpx;
+  width: 300rpx;
+  margin: 50rpx;
+  background-color: white;
+  color: #ED6E46;
+  border-radius: 20rpx;
+  border: 2rpx solid #ED6E46;
+}

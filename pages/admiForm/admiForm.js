@@ -1,23 +1,36 @@
 // pages/admiForm/admiForm.js
+const db = wx.cloud.database()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    mentorName:'',
-    cours:'',
+    monitorName:'',
+    courseName:'',
     conNumber:'',
-
     startTime: '08:00',
-    endTime: '22:00',
-
-
+    endTime: '10:00',
     date:'',
-
+    standardTime:"",
+    // 导生日期可选区间
+    delayTime:14,
+    start:"",
+    end:""
   },
   onLoad(options) {
-
+    var myDate = new Date()
+    console.log(myDate)
+    var today = myDate.toLocaleDateString(); //今日年月日
+    today = today.replace(/\//g, '-')
+     myDate.setDate(myDate.getDate()+this.data.delayTime)
+     var endTime =myDate.toLocaleDateString().replace(/\//g, '-')
+    console.log(endTime)
+    // console.log(today)
+    this.setData({
+      start:today,
+      end: endTime
+    })
   },
 
   onReady() {
@@ -26,13 +39,13 @@ Page({
 
   inputMentorName(e) {
     this.setData({
-      mentorName: e.detail.value
+     monitorName: e.detail.value
     })
   },
 
   inputCourse(e) {
     this.setData({
-      course: e.detail.value
+      courseName: e.detail.value
     })
   },
 
@@ -64,16 +77,28 @@ Page({
     const timeInterval = this.calculateTimeInterval(this.data.startTime,this.data.endTime)
 
     if(isUnavailableTime){
-      wx.showToast({
+      wx.showModal({
         title: '12-15点为导生休息时间',
+        content: '',
+        complete: (res) => {
+          if (res.cancel) {
+            
+          }
+      
+          if (res.confirm) {
+            
+          }
+        }
       })
       this.setData({
         startTime : '15:00',
         endTime : '17:00',
       })
     }else if(timeInterval<2){
+      
       wx.showToast({
-        title: '最小间隔为两小时',
+        title: '最小间隔两小时',
+        icon:'error'
       })
       const adjustedEndTime = this.calculateAdjustedEndTime(this.data.startTime);
     this.setData({
@@ -132,8 +157,33 @@ bindDateChange(e){
     date:e.detail.value
   })
 },
+//提交按钮
   submitMsg(e) {
-    
+    db.collection("course")
+      .add({
+        data:{
+          monitorName:this.data.monitorName,
+          conNumber:this.data.conNumber,
+          startTime:this.data.startTime,
+          endTime:this.data.endTime,
+          courseName:this.data.courseName,
+          date:this.data.date
+        }
+      })
+      .then(res => {
+          wx.showToast({
+            title: '提交成功',
+          })
+          .then(res=>{
+            wx.redirectTo({
+              url: '/pages/admTeaChoices/admTeaChoices',
+            })
+          })
+         
+      })
+      .catch(err=>{
+          console.log(err)
+      })
   },
 
   /**

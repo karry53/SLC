@@ -1,11 +1,6 @@
 {
-  "appid": "wx5b2f6e721af544c9",
   "compileType": "miniprogram",
-  "libVersion": "3.1.1",
-  "packOptions": {
-    "ignore": [],
-    "include": []
-  },
+  "cloudfunctionRoot": "cloudFunction/",
   "setting": {
     "coverView": true,
     "es6": true,
@@ -23,11 +18,19 @@
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    }
+    },
+    "condition": false,
+    "ignoreUploadUnusedFiles": true
   },
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
+  },
+  "appid": "wx5b2f6e721af544c9",
+  "libVersion": "3.1.1",
+  "packOptions": {
+    "ignore": [],
+    "include": []
   }
 }

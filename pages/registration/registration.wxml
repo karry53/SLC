@@ -1,6 +1,6 @@
-<page-meta>
+<!-- <page-meta>
   <navigation-bar title="注册" back="ture" color="black" background="#FFF"></navigation-bar>
-</page-meta>
+</page-meta> -->
 
 
 <view class="page">
@@ -11,15 +11,15 @@
 
 <view class="form">
   <view class="login-type">
-    <view class="teacher-btn {{teacherActive ? 'active' : ''}}" bindtap="switchToTeacher">教师</view>
+    <!-- <view class="teacher-btn {{teacherActive ? 'active' : ''}}" bindtap="switchToTeacher">教师</view> -->
     <view class="student-btn {{!teacherActive ? 'active' : ''}}" bindtap="switchToStudent">导生</view>
   </view>
 
-  <input class="login-input" type="text" value="" :maxlength="11" placeholder="请输入您的手机号/邮箱" placeholder-class="input-placeholder" />
+  <input class="login-input" type="text" value="" :maxlength="11" placeholder="请输入您的账号/姓名" placeholder-class="input-placeholder" bindinput="handleUsernameInput"/>
 
-  <input class="login-input" type="text" password value="" placeholder="请输入您的登录密码" placeholder-class="input-placeholder" />
+  <input class="login-input" type="text" password value="" placeholder="请输入您的登录密码" placeholder-class="input-placeholder" bindinput="handlePasswordInput"/>
 
-  <button bindtap="submitLogin" class="submit-login">注册</button>
+  <button bindtap="handleRegister" class="submit-login">注册</button>
 
   <!-- <view class="registration">注册</view> -->
 </view>

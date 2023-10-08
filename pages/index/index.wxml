@@ -1,8 +1,25 @@
-<!--index.wxml-->
-<navigation-bar title="SLC互助学习中心" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<!-- <navigation-bar title="SLC互助学习中心" back="{{false}}" color="black" background="#FFF"></navigation-bar> -->
+
+<!--公告栏目-->
+<!-- <swiper class="notice-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}">
+  <block wx:for="{{notices}}" wx:key="index">
+    <swiper-item>
+      <view class="notice-item" bindtap="openNoticeDetail">{{item}}</view>
+    </swiper-item>
+  </block>
+</swiper> -->
+
+<!-- <scroll-view scroll-y="true" style="height: 90vh;"> -->
+
+
+<van-notice-bar left-icon="volume-o" text="预约要求：1、预约课程需提前24h，取消课程需提前2h (无故或临时取消将列为不良记录)  2、每天晚上10点截止预约" />
+
+
+
 <view class="page">
+
   <view class="header">
-          <image src="../../img/header.jpg" mode="aspectFill"></image>
+    <image src="../../img/header.png" mode="aspectFill"></image>
   </view>
 
   <view class="process-box">
@@ -15,13 +32,12 @@
           <view class="process-text-item">立刻预约</view>
           <view class="process-text-intro">点击开始预约</view>
         </view>
-
       </view>
-      <view class="process-item">
+      <view class="process-item" bind:tap="switchTabUserRecord">
         <view class="process-triangle"></view>
         <!-- <text class="process-triangle-item">02</text> -->
         <view class="process-text">
-          <view class="process-text-item" bind:tap="switchTabUserRecord">查看课程</view>
+          <view class="process-text-item">查看课程</view>
           <view class="process-text-intro">查看预约记录</view>
         </view>
 
@@ -30,38 +46,62 @@
   </view>
 
 
+
   <view class="post-show">
 
-    <view class="process-title">
-      <view class="process-title-text">公告</view>
-      <!-- <view class="process-cylinder"></view> -->
-      <view class="process-canvas" bindscroll="onScroll">
-        <canvas id="sec-cylinderCanvas" canvas-id="cylinderCanvas" type="2d" style="top:{{postTop}}px;left: {{left}}px"></canvas>
-      </view>
-      <!-- <view class="process-rectangle"></view> -->
-    </view>
-
-    <view class="post-list" wx:for="{{postList}}" wx:key="index">
-
-      <view class="post-item" data-id="{{item._id}}">
-        <image src="{{item.image[0]}}"  data-imageUrl="{{item.image[0]}}" bindtap="previewImage" mode="aspectFill" class="post-image" />
-
-        <view class="post-info">
-          <view class="post-info-mainBody">
-            <view class="post-rectangle"></view>
-            <text class="post-mainBody">{{item.mainBody}}</text>
-          </view>
-          <view class="post-content">{{item.demand}}</view>
-          <!-- <view class="post-status {{item.status === '已结对' ? 'paired' : 'waiting'}}">{{item.status}}</view> -->
-          <button class="post-button" bindtap="navigateToDetail"  data-id="{{item._id}}" size="mini">了解更多</button>
+    <!-- 新增栏目 -->
+    <!-- <view class="course-list" wx:for="{{courseData}}" wx:key="index">
+        <view class="course-item">
+          <text class="course-name">{{item.courseName}}</text>
+          <text class="course-instructors">导生：{{item.instructors.join(', ')}}</text>
         </view>
-
-        
       </view>
+    </view> -->
 
-    </view>
+    <view class="show-title">每周课程</view>
+
+    <!-- 菜单显示 -->
+    <van-collapse value="{{ activeNames }}" bind:change="onChange" bind:open="onOpen" bind:close="onClose">
+
+      <block wx:for="{{clickDate}}" wx:for-item="outerItem" wx:for-index="outerIndex">
+        <van-collapse-item title="{{outerItem}}" name="{{outerIndex}}" icon="notes-o" size="large" value="课程" class="collapse-item">
+
+          <!-- <view>{{outerItem}}没有</view>
+            <view>{{outerIndex}}没有</view> -->
+
+
+          <view wx:for="{{appointmentRecord}}" wx:for-index="innerIndex" class="collapse-content">
+            <!-- 课程名称 -->
+            <view wx:if="{{appointmentRecord[innerIndex].date === clickDate[outerIndex]}}" class="collapse-courseName">
+              {{item.courseName}}
+            </view>
+
+            <!-- <view>{{appointmentRecord[index].date}}aa</view>
+          <view>{{title}}hh</view> -->
+            <!-- 导生名字 -->
+            <view wx:if="{{appointmentRecord[innerIndex].date === clickDate[outerIndex]}}" class="collapse-monitorName">
+              {{item.monitorName}}
+            </view>
+
+
+            <view wx:if="{{appointmentRecord[innerIndex].date === clickDate[outerIndex]}}" class="collapse-monitorName">
+              {{item.startTime}}-{{item.endTime}}
+            </view>
+
+            
+
+
+          </view>
+
+
+        </van-collapse-item>
+      </block>
+
+    </van-collapse>
+
 
 
 
   </view>
 </view>
+<!-- </scroll-view> -->

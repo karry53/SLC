@@ -2,5 +2,6 @@
   "usingComponents": {
     "navigation-bar": "/components/navigation-bar/navigation-bar",
     "van-button": "@vant/weapp/button/index"
-  }
+  },
+  "navigationBarTitleText": "用户申请"
 }

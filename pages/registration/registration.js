@@ -1,66 +1,46 @@
-// pages/registration/registration.js
+// 注册页面 register.js
+const app = getApp();
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    username: '',
+    password: ''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  // 处理用户名输入
+  handleUsernameInput(e) {
+    this.setData({
+      username: e.detail.value
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  // 处理密码输入
+  handlePasswordInput(e) {
+    this.setData({
+      password: e.detail.value
+    });
   },
+  
+  handleRegister() {
+    wx.switchTab({
+      url: '../administrator/administrator',
+    })
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
+    wx.cloud.database().collection('monitor')
 
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+    .add({
+      data: {
+        mentorAccount:this.data.username,
+        mentorPassword:this.data.password
+      }
+    })
+      .then(res => {
+        // 注册成功后的处理
+        console.log('注册成功', res);
+        
+      })
+      .catch(err => {
+        // 注册失败处理
+        console.error('注册失败', err);
+        // 提示用户注册失败
+      });
   }
-})
+});
