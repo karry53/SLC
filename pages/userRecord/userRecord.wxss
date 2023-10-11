@@ -36,11 +36,11 @@ page {
 }
 
 .info-course{
-  margin-top: 10rpx;
+  margin-top: 15rpx;
 }
 
 .info-con-number{
-  margin-top: 10rpx;
+  margin-top: 15rpx;
 }
 .post-rectangle {
   /* position: absolute; */
@@ -49,7 +49,7 @@ page {
   border: 5rpx solid #ED6E46;
 }
 .info-name{
-  margin-top: 10rpx;
+  margin-top: 15rpx;
   color: #999999;
   font-size: 30rpx;
 }

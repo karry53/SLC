@@ -1,0 +1,28 @@
+<!-- <page-meta>
+    <navigation-bar title="SLC信息录入" back="ture" color="black" background="#FFF"></navigation-bar>
+  </page-meta> -->
+
+
+<!-- <scroll-view scroll-y="true" style="height:90vh"> -->
+  <view class="admMenRecord">
+  <view class="form-list" wx:for="{{studentsInfo}}" wx:key="*this">
+
+    <view class="form-item" wx:if="{{item}}">
+      <view class="item-box">
+        <view class="item-triangle"></view>
+        <!-- <van-icon name="user-o" color="" bind:click="ToAdmStuList"/> -->
+        <view class="item-title"> 姓名：{{item.name}}</view>
+      </view>
+      <view class="item-line"></view>
+      
+
+      <view class="info-con-number">问题简述：{{item.syllabus}}</view>
+      
+      <view class="item-line"></view>
+
+    </view>
+
+    
+  </view>
+</view>
+<!-- </scroll-view> -->

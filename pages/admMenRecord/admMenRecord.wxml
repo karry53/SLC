@@ -1,0 +1,80 @@
+<!-- <page-meta>
+    <navigation-bar title="SLC信息录入" back="ture" color="black" background="#FFF"></navigation-bar>
+  </page-meta> -->
+
+<!-- <view class="scroll-view">
+    <scroll-view scroll-left="{{scrollLeftIndex*itemWidth}}" scroll-x scroll-with-animation>
+        <view class='item {{index==0?"lef":""}}' style='width:{{itemWidth}}px' wx:for="{{dateList}}" wx:key="key" data-index='{{index}}' bindtap='clickDate'>
+          <text class='month'>{{item.month}}月</text>
+            <view class='text-view {{index==clickIndex?"all-choose":""}}'>
+              
+                <text class='week {{index==clickIndex?"week-choose":""}}'>{{item.week}}</text>
+                <view class='day {{index==clickIndex?"day-choose":""}}'>{{item.day}}</view>
+                
+                <view wx:if="{{item.month == sysmonth && item.day == nowDate}}">
+                    <text class='week'>今日</text>
+                </view>
+                <view wx:else>
+                    <text class='week'>{{item.week}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view> -->
+
+
+<!-- <view class="admMenRecord">
+  <view class="form-list">
+
+    <view class="form-item">
+      <view class="item-box">
+        <view class="item-triangle"></view>
+        <view class="item-title"> 时间段：</view>
+      </view>
+      <view class="item-line"></view>
+      <view class="info-course">上课名单：</view>
+      <view class="info-con-number">导生会议号：123-123-1238</view>
+      <view class="info-name">导生姓名：xxx</view>
+      <view class="item-line"></view>
+
+      <van-button color="#999999" plain custom-style="width:180rpx;height:80rpx">取消预约</van-button>
+
+      <view class="del-button">取消预约</view>
+
+    </view>
+
+    
+  </view>
+</view> -->
+
+
+
+
+<!-- <scroll-view scroll-y="true" style="height:90vh"> -->
+  <view class="admMenRecord">
+  <view class="form-list" wx:for="{{courseRecord}}" wx:key="*this">
+
+    <view class="form-item">
+      <view class="item-box">
+        <view class="item-triangle"></view>
+        <van-icon name="user-o" color="" bind:click="ToAdmStuList" data-course="{{item}}"/>
+        <view class="item-title"> 日期：{{item.date}}</view>
+      </view>
+      <view class="item-line"></view>
+      
+      <!-- <view class="info-course" wx:for="{{item.studentsInfo}}" wx:for-item="students" wx:key="students">上课名单：{{students.name}}</view> -->
+
+      <view class="info-con-number">课程名称：{{item.courseName}}</view>
+      <view class="info-con-number"> 时间段：{{item.startTime}}-{{item.endTime}}</view>
+      
+      
+      <view class="info-con-number">会议号：{{item.conNumber}}</view>
+      <view class="info-name">导生姓名：{{item.monitorName}}</view>
+      <view class="item-line"></view>
+
+    </view>
+
+    
+  </view>
+</view>
+<!-- </scroll-view> -->

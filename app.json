@@ -5,15 +5,22 @@
     "pages/administrator/administrator",
     "pages/userForm/userFrom",
     "pages/admiForm/admiForm",
-    "pages/registration/registration"
+    "pages/registration/registration",
+    "pages/admMenRecord/admMenRecord",
+    "pages/admTeaRecord/admTeaRecord",
+    "pages/admTeaChoices/admTeaChoices",
+    "pages/admStuList/admStuList"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index"
   },
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+    "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
   },
+  "sitemapLocation": "sitemap.json",
   "tabBar":{
     "list": [
       {
@@ -29,18 +36,5 @@
         "text": "管理员"
       }
     ]
-  },
-  "style": "v2",
-  "renderer": "skyline",
-  "rendererOptions": {
-    "skyline": {
-      "defaultDisplayBlock": true,
-      "disableABTest": true,
-      "sdkVersionBegin": "3.0.0",
-      "sdkVersionEnd": "15.255.255"
-    }
-  },
-  "componentFramework": "glass-easel",
-  "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  }
 }

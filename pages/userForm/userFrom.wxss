@@ -1,22 +1,63 @@
 page {
   background-color: #F4F4F4;
+
+}
+
+.userForm{
+  padding: 10rpx;
+  padding-top: 0;
   height: 100vh;
 }
 
-.userorm{
-  padding: 10rpx;
-  padding-top: 0;
+/* .userForm view{ 
+  display: inline-flex;
+} */
+
+
+.form-list{
+  
+  height: 100vh;
+}
+
+
+.form-item{
+  display: inline-block;
+  width: 100%;
+  /* height: 200rpx; */
+  background-color: #ffffff;
+  margin-bottom:30rpx;
+  padding: 25rpx;
   
 }
 
-.form-item{
+
+.form-question{
+  /* display: inline-block; */
+  width: 100%;
+  height: 300rpx;
   background-color: #ffffff;
   margin-bottom: 25rpx;
   padding: 25rpx;
+  
 }
+
+.button{
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* height: 100rpx; */
+  /* display: flex;
+  height: 50rpx; */
+}
+
+.form-item button{
+  margin-bottom: 25rpx;
+  padding: 25rpx;
+  
+}
+
 .item-box{
   display: flex;
-  /* justify-content: left; */
+  justify-content: left;
   align-items: center;
 }
 item-title{
@@ -31,17 +72,25 @@ item-title{
   border-bottom: 35rpx solid #ED6E46;
   border-left: 6rpx solid #ED6E46;
 }
+
 .item-input {
   width: 95%;
-  height: 60rpx;
-  padding: 15rpx;
-  margin-bottom: 10rpx;
+  height: 40rpx;
+  padding: 10rpx;
+  margin-bottom: 0rpx;
   border-bottom: 1px solid #F4F4F4;
 }
 
 .item-picker{
   display: flex;
   justify-content: center;
+}
+
+
+.item-question{
+  display: inline-block;
+  width: 95%;
+  padding: 20rpx;
 }
 
 .submit{

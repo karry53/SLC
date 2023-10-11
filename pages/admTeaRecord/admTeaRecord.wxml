@@ -1,0 +1,110 @@
+
+<!-- <page-meta>
+  <navigation-bar title="SLC预约记录" back="ture" color="black" background="#FFF"></navigation-bar>
+</page-meta> -->
+<view class="scroll-view">
+    <scroll-view scroll-left="{{scrollLeftIndex*itemWidth}}" scroll-x scroll-with-animation>
+        <view class='item {{index==0?"lef":""}}' style='width:{{itemWidth}}px' wx:for="{{dateList}}" wx:key="key" data-index='{{index}}' bindtap='clickDate'>
+
+          <text class='month'>{{item.month}}月</text>
+
+            <view class='text-view {{index==clickIndex?"all-choose":""}}'>
+                <text class='week {{index==clickIndex?"week-choose":""}}'>{{item.week}}</text>
+                <view class='day {{index==clickIndex?"day-choose":""}}'>{{item.day}}</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+
+
+<!-- <scroll-view scroll-y="true" style="height:75vh"> -->
+  
+
+<view class="userRecord">
+  <view class="form-list" wx:for="{{appointmentRecord}}">
+    <view class="form-item">
+      <view class="item-box">
+        <view class="item-triangle"></view>
+
+        <!-- <van-button bind:click="onClickShow" custom-style="border:white;width:30rpx;height:30rpx" data-_id="{{item._id}}">
+        <view class="del-button">修改信息</view>
+         <van-icon name="records-o" />
+      </van-button> -->
+
+
+        <van-icon name="records-o" bind:click="changeMonitorName" data-_id="{{item._id}}"/>
+        <view class="item-title"> 导生姓名：{{item.monitorName}}</view>
+      </view>
+      <view class="item-line"></view>
+
+      <view class="info-modify">
+        <van-icon name="records-o" bind:click="changeCourseName" data-_id="{{item._id}}"/>
+      <view class="info-course">预约课程名称：{{item.courseName}}</view>
+      </view>
+
+      <view class="info-modify">
+        <van-icon name="records-o" bind:click="changeMeetingNum" data-_id="{{item._id}}"/>
+      <view class="info-con-number">导生会议号：{{item.conNumber}}</view>
+      </view>
+
+      <view class="info-modify">
+        <van-icon name="records-o" bind:click="changeDate" data-date="{{item.date}}" data-_id="{{item._id}}"/>
+      <view class="info-con-number">预约日期：{{item.date}}</view>
+      </view>
+
+      <view class="info-modify">
+        <van-icon name="orders-o"/>
+        <view class="info-con-number">预约时间：
+
+
+        <van-icon name="records-o" bind:click="changeStartTime" data-startTime="{{item.startTime}}" data-_id="{{item._id}}"/>{{item.startTime}}-
+        <van-icon name="records-o" bind:click="changeEndTime" data-endTime="{{item.endTime}}" data-_id="{{item._id}}"/>{{item.endTime}}
+
+
+
+      </view>      
+      </view>
+
+      
+
+      <!-- <view class="info-name">导生姓名：xxx</view> -->
+      <view class="item-line"></view>
+
+      <!-- <van-button color="#999999" plain custom-style="width:180rpx;height:80rpx">取消预约</van-button> -->
+
+      <!-- <van-button bind:click="onClickShow" custom-style="border:white;width:150rpx;height:70rpx;float:right;margin-top:10rpx" data-_id="{{item._id}}">
+        <view class="del-button">修改信息</view>
+      </van-button>
+
+      <van-overlay show="{{ show }}" bind:click="onClickHide">
+        <view class="wrapper">
+          <view class="block" catch:tap="noop">
+            <view class="modify">
+              <view class="item-title" bindtap="changeMonitorName"> 导生姓名：{{item.monitorName}}</view>
+            <view class="info-course" bindtap="changeCourseName">预约课程名称：{{item.courseName}}</view>
+            <view class="info-con-number"bindtap="changeMeetingNum">导生会议号：{{item.conNumber}}</view>
+
+            <view class="info-con-number" >导生预约时间：<text bindtap="changeDate" data-date="{{item.date}}">{{item.date}}</text> <view></view> -->
+
+            <!-- <text bindtap="changeStartTime" data-startTime="{{item.startTime}}">{{item.startTime}}</text>------<text bindtap="changeEndTime" data-endTime="{{item.endTime}}">{{item.endTime}}</text></view></view>
+            <view class="modity-button" > -->
+              <!-- <button size="mini" >确认修改</button> -->
+            <!-- <button size="mini" bindtap="cancelUpdate">完成修改</button></view>
+          </view>
+        </view>
+      </van-overlay> -->
+
+
+
+
+
+
+
+
+    </view>
+
+
+
+  </view>
+</view>
+<!-- </scroll-view> -->

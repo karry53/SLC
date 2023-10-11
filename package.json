@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vant/weapp": "^1.11.0"
+    "@vant/weapp": "^1.11.0",
+    "wx-server-sdk": "^2.6.3"
   }
 }

@@ -6,6 +6,12 @@ Page({
    */
   data: {
     teacherActive: true, 
+
+    teacherAccount:'111',
+    teacherPassword:'111',
+
+    mentorAccount:'',
+    mentorPassword:''
   },
 
   switchToTeacher() {
@@ -22,24 +28,91 @@ Page({
     });
   },
  
-  submitLogin() {
+  submitLogin(e) {
+    console.log('为什么'.e)
     const { loginMsg, teacherActive } = this.data;
 
     if (teacherActive) {
-      this.submitToTeacherServer(loginMsg);
+      this.submitToTeacherServer(e);
     } else {
-      this.submitToMentorServer(loginMsg);
+      this.submitToMentorServer(e);
     }
   },
 
-  submitToTeacherServer(formData){
-    console.log('teacher')
+  submitToTeacherServer(e){
+    console.log('teacher',e)
+    var teacherAccount = e.detail.value.account;
+    var teacherPassword = e.detail.value.password;
+
+    console.log(teacherAccount)
+    console.log(teacherPassword)
+
+    if (teacherAccount === this.data.teacherAccount && teacherPassword === this.data.teacherPassword) {
+      wx.navigateTo({
+        url: '../admTeaChoices/admTeaChoices',
+      });
+    } else {
+      // 显示错误提示或其他处理
+      wx.showToast({
+        title: '账号或密码错误',
+        icon: 'none',
+        duration: 2000
+      });
+    }
+
 
   },
 
-  submitToMentorServer(formData){
-    console.log('mentor')
-  },
+  submitToMentorServer(e){
+    console.log('mentor',e)
+
+    var mentorAccount = e.detail.value.account;
+    var mentorPassword = e.detail.value.password;
+
+    // const { username, password } = this.data;
+
+    // 查询数据库集合 "monitor" 中是否存在匹配的用户名和密码
+    const db = wx.cloud.database();
+    const monitorCollection = db.collection('monitor');
+
+    monitorCollection.where({
+      mentorAccount,
+      mentorPassword
+    }).get()
+      .then(res => {
+        if (res.data.length > 0) {
+          // 登录成功后的处理
+          console.log('登录成功', res.data[0]);
+          wx.navigateTo({
+            url: '../admMenRecord/admMenRecord',
+          })
+        } else {
+          wx.showToast({
+                  title: '账号或密码错误',
+                  icon: 'none',
+                  duration: 2000
+                });
+        }
+      })
+      .catch(err => {
+        // 处理错误
+        console.error('登录失败', err);
+        // 提示用户登录失败
+      });
+
+  //   if (mentorAccount === this.data.mentorAccount && mentorPassword === this.data.mentorPassword) {
+  //     wx.navigateTo({
+  //       url: '../admMenRecord/admMenRecord?mentorAccount=' + mentorAccount,
+  //     });
+  //   } else {
+  //     // 显示错误提示或其他处理
+  //     wx.showToast({
+  //       title: '账号或密码错误',
+  //       icon: 'none',
+  //       duration: 2000
+  //     });
+  // }
+},
 
   onLoad(options) {
 
